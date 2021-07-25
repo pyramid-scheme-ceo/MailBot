@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailBot.API", "MailBot.API\MailBot.API.csproj", "{BED54205-A2D8-4977-95F1-DF626B932DEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailBot.Domain", "MailBot.Domain\MailBot.Domain.csproj", "{FECDDEBF-A2B5-467F-880D-3E5497E4EEB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BED54205-A2D8-4977-95F1-DF626B932DEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BED54205-A2D8-4977-95F1-DF626B932DEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BED54205-A2D8-4977-95F1-DF626B932DEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BED54205-A2D8-4977-95F1-DF626B932DEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FECDDEBF-A2B5-467F-880D-3E5497E4EEB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FECDDEBF-A2B5-467F-880D-3E5497E4EEB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FECDDEBF-A2B5-467F-880D-3E5497E4EEB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FECDDEBF-A2B5-467F-880D-3E5497E4EEB0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
