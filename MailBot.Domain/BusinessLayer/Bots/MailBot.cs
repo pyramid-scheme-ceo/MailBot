@@ -27,21 +27,6 @@ namespace MailBot.Domain.BusinessLayer.Bots
             _teamsInfoShim = teamsInfoShim;
         }
 
-        public override async Task OnTurnAsync(
-            ITurnContext turnContext,
-            CancellationToken cancellationToken = new())
-        {
-            if (turnContext.IsPersonalConversation())
-            {
-                await turnContext.SendActivityAsync(new Activity
-                {
-                    Type = ActivityTypes.Typing,
-                }, cancellationToken);
-            }
-            
-            await base.OnTurnAsync(turnContext, cancellationToken);
-        }
-
         /// <inheritdoc />
         protected override async Task OnMembersAddedAsync(
             IList<ChannelAccount> membersAdded,
