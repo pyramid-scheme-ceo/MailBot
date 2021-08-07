@@ -11,7 +11,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="ApiModels" />
+      <ProjectReference Include="..\MailBot.IocRegistry\MailBot.IocRegistry.csproj" />
     </ItemGroup>
 
 </Project>

@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailBot.API", "MailBot.API\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailBot.Domain", "MailBot.Domain\MailBot.Domain.csproj", "{FECDDEBF-A2B5-467F-880D-3E5497E4EEB0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailBot.Infrastructure", "MailBot.Infrastructure\MailBot.Infrastructure.csproj", "{F631AB41-D2E8-4A8B-90CB-24F90BF12A8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailBot.IocRegistry", "MailBot.IocRegistry\MailBot.IocRegistry.csproj", "{3DF3E9B7-CE2C-4D5B-93B7-D4E1308BF213}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{FECDDEBF-A2B5-467F-880D-3E5497E4EEB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FECDDEBF-A2B5-467F-880D-3E5497E4EEB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FECDDEBF-A2B5-467F-880D-3E5497E4EEB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F631AB41-D2E8-4A8B-90CB-24F90BF12A8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F631AB41-D2E8-4A8B-90CB-24F90BF12A8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F631AB41-D2E8-4A8B-90CB-24F90BF12A8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F631AB41-D2E8-4A8B-90CB-24F90BF12A8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DF3E9B7-CE2C-4D5B-93B7-D4E1308BF213}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DF3E9B7-CE2C-4D5B-93B7-D4E1308BF213}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DF3E9B7-CE2C-4D5B-93B7-D4E1308BF213}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DF3E9B7-CE2C-4D5B-93B7-D4E1308BF213}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
