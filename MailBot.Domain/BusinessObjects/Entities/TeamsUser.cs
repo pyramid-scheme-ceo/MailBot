@@ -9,8 +9,8 @@ namespace MailBot.Domain.BusinessObjects.Entities
             string botId,
             string email,
             string serviceUrl,
-            string aadUserId = null,
             string botUserId = null,
+            string aadUserId = null,
             string conversationId = null)
         {
             TenantId = tenantId.ValueOrThrow();
@@ -28,6 +28,11 @@ namespace MailBot.Domain.BusinessObjects.Entities
         public string ServiceUrl { get; }
         public string AadUserId { get; }
         public string BotUserId { get; }
-        public string ConversationId { get; }
+        public string ConversationId { get; private set; }
+
+        public bool ConversationExists => !string.IsNullOrEmpty(ConversationId);
+
+        public void SetConversationId(string conversationId)
+            => ConversationId = conversationId;
     }
 }

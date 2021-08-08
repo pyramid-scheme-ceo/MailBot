@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ using Microsoft.Azure.Cosmos.Table;
 
 namespace MailBot.Infrastructure.AzureTableStorage
 {
-    public class GenericTableStore<T> : ITableStore<T>
+    public class GenericTableStore<T> : ITableStore<T> where T : class
     {
         private readonly IEntityConverter<T> _entityConverter;
         private readonly CloudTable _table;
@@ -26,14 +27,33 @@ namespace MailBot.Infrastructure.AzureTableStorage
             _table = table;
         }
         
-        public Task<T> GetById(string partitionKey, string rowKey, CancellationToken cancel)
+        public async Task<T> GetById(string partitionKey, string rowKey, CancellationToken cancel)
         {
-            throw new System.NotImplementedException();
+            var operation = TableOperation.Retrieve(partitionKey, rowKey);
+            var result = await _table.ExecuteAsync(operation, cancel);
+
+            if (result.Result is DynamicTableEntity entity)
+            {
+                return _entityConverter.FromTableEntity(entity);
+            }
+
+            return null;
         }
 
-        public Task<bool> Insert(T entity, CancellationToken cancel)
+        public async Task<bool> InsertOrReplace(T entity, CancellationToken cancel)
         {
-            throw new System.NotImplementedException();
+            var operation = TableOperation.InsertOrReplace(_entityConverter.ToTableEntity(entity));
+
+            try
+            {
+                await _table.ExecuteAsync(operation, cancel);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         public async Task<bool> InsertOrMergeBatch(IEnumerable<T> entities, CancellationToken cancel)

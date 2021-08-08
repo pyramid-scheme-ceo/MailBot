@@ -10,7 +10,7 @@ using Microsoft.Bot.Schema.Teams;
 namespace MailBot.Domain.BusinessLayer
 {
     /// <summary>
-    /// A class to provide IOC-friendly access to the <see cref="TeamsInfo"/> object and extend it's functionality
+    /// A class to provide IOC-friendly access to the <see cref="TeamsInfo"/> object and also extend it's functionality
     /// </summary>
     public class TeamsInfoShim
     {

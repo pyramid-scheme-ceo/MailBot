@@ -1,4 +1,5 @@
-﻿using MailBot.Domain.BusinessLayer.Services;
+﻿using MailBot.Domain.BusinessLayer;
+using MailBot.Domain.BusinessLayer.Services;
 using MailBot.Domain.BusinessObjects.ValueObjects;
 using MailBot.Domain.Interfaces.Services;
 using Microsoft.Bot.Builder;
@@ -21,7 +22,9 @@ namespace MailBot.IocRegistry
 
             services.AddSingleton(botConfiguration);
             services.AddScoped<IBot, Domain.BusinessLayer.Bots.MailBot>();
+            services.AddTransient<IConversationService, ConversationService>();
             services.AddTransient<ITeamsUserService, TeamsUserService>();
+            services.AddTransient<TeamsInfoShim>();
             
             return services;
         }

@@ -15,7 +15,7 @@ namespace MailBot.Infrastructure.AzureTableStorage.EntityConverters
         public DynamicTableEntity ToTableEntity(TeamsUser input)
         {
             var (partitionKey, rowKey) = GetKeys(input);
-            
+
             return new DynamicTableEntity(partitionKey, rowKey)
             {
                 Properties = new Dictionary<string, EntityProperty>
@@ -33,9 +33,9 @@ namespace MailBot.Infrastructure.AzureTableStorage.EntityConverters
                 tableEntity.PartitionKey.Split("_")[0],
                 tableEntity.PartitionKey.Split("_")[1],
                 tableEntity.RowKey,
-                tableEntity.Properties["serviceUrl"].StringValue,
-                tableEntity.Properties["aadUserId"].StringValue,
-                tableEntity.Properties["botUserId"].StringValue,
-                tableEntity.Properties["conversationId"].StringValue);
+                tableEntity.StringValueOrNull("serviceUrl"),
+                tableEntity.StringValueOrNull("botUserId"),
+                tableEntity.StringValueOrNull("aadUserId"),
+                tableEntity.StringValueOrNull("conversationId"));
     }
 }
