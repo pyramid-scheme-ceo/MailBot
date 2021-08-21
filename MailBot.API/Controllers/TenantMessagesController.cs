@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using MailBot.API.Models.TenantMessages;
 using MailBot.Domain.Interfaces.Services;
@@ -24,15 +23,7 @@ namespace MailBot.API.Controllers
             SendMessageToUserRequest request,
             CancellationToken cancel)
         {
-            try
-            {
-                await _conversationService.SendMessage(request.Email, tenantId, request.MessageText, cancel);
-            }
-            catch (Exception e)
-            {
-                return StatusCode(500);
-            }
-            
+            await _conversationService.SendMessage(request.Email, tenantId, request.MessageText, cancel);
             return Ok();
         }
     }

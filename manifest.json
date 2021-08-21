@@ -1,0 +1,57 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.9/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.9",
+  "version": "1.0.0",
+  "id": "<your bot ID here>",
+  "packageName": "com.namespacematt.mailbot",
+  "developer": {
+    "name": "Matt Astachnowicz",
+    "websiteUrl": "https://namespace-matt.com",
+    "privacyUrl": "https://namespace-matt.com/privacy",
+    "termsOfUseUrl": "https://namespace-matt.com/terms"
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "name": {
+    "short": "MailBot",
+    "full": "MailBot"
+  },
+  "description": {
+    "short": "A bot for receiving mail notifications",
+    "full": "A bot for receiving mail notifications (but more)"
+  },
+  "accentColor": "#FFFFFF",
+  "staticTabs": [
+    {
+      "entityId": "conversations",
+      "scopes": [
+        "personal"
+      ]
+    },
+    {
+      "entityId": "about",
+      "scopes": [
+        "personal"
+      ]
+    }
+  ],
+  "bots": [
+    {
+      "botId": "<your bot ID here>",
+      "scopes": [
+        "personal",
+        "team",
+        "groupchat"
+      ],
+      "supportsFiles": false,
+      "isNotificationOnly": false
+    }
+  ],
+  "permissions": [
+    "identity",
+    "messageTeamMembers"
+  ],
+  "validDomains": []
+}
